@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>CSS 3時間 勉強会</title>
+
+<style>
+
+/* ===============================
+   1. Global Style
+================================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  line-height: 1.8;
+}
+
+header {
+  background: #2c3e50;
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+section {
+  background: white;
+  margin: 30px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h2 {
+  border-left: 6px solid #3498db;
+  padding-left: 10px;
+}
+
+/* ===============================
+   2. Selector Demo
+================================= */
+
+.element-selector p {
+  color: blue;
+}
+
+.class-demo {
+  color: green;
+}
+
+#id-demo {
+  color: red;
+  font-weight: bold;
+}
+
+.parent p {
+  color: purple;
+}
+
+.hover-demo:hover {
+  color: orange;
+}
+
+/* ===============================
+   3. Box Model Demo
+================================= */
+
+.box-demo {
+  margin: 20px;
+  padding: 20px;
+  border: 4px solid black;
+  background: #ecf0f1;
+}
+
+.content-box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid blue;
+  background: #d6eaf8;
+}
+
+.border-box {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid red;
+  background: #fadbd8;
+}
+
+/* ===============================
+   4. Display & Position
+================================= */
+
+.inline-demo span {
+  background: yellow;
+}
+
+.block-demo div {
+  background: lightgreen;
+  margin: 10px 0;
+}
+
+.position-container {
+  position: relative;
+  height: 150px;
+  background: #eee;
+}
+
+.absolute-box {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: red;
+  color: white;
+  padding: 10px;
+}
+
+/* ===============================
+   5. Flexbox
+================================= */
+
+.flex-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.flex-item {
+  background: #3498db;
+  color: white;
+  padding: 20px;
+  flex: 1;
+  text-align: center;
+}
+
+/* ===============================
+   6. Grid
+================================= */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  background: #9b59b6;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===============================
+   7. Responsive
+================================= */
+
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>CSS 3時間 勉強会</h1>
+  <p>Beginner → Intermediate</p>
+</header>
+
+<section>
+  <h2>① セレクタ 詳細</h2>
+
+  <h3>1. 要素セレクタ</h3>
+  <div class="element-selector">
+    <p>これは青になります。</p>
+  </div>
+
+  <h3>2. クラス</h3>
+  <p class="class-demo">これは緑になります。</p>
+
+  <h3>3. ID</h3>
+  <p id="id-demo">これは赤になります。</p>
+
+  <h3>4. 子孫セレクタ</h3>
+  <div class="parent">
+    <p>これは紫になります。</p>
+  </div>
+
+  <h3>5. 疑似クラス</h3>
+  <p class="hover-demo">マウスをのせてください。</p>
+
+  <h3>6. 詳細度（Specificity）</h3>
+  <p>
+    優先順位: inline style > ID > class > element
+  </p>
+
+</section>
+
+<section>
+  <h2>② Box Model 詳細</h2>
+
+  <div class="box-demo">
+    margin + padding + border の例
+  </div>
+
+  <h3>content-box（デフォルト）</h3>
+  <div class="content-box">
+    width + padding + border = 実さいサイズ
+  </div>
+
+  <h3>border-box</h3>
+  <div class="border-box">
+    width に padding と border を ふくみます
+  </div>
+
+</section>
+
+<section>
+  <h2>③ Display & Position</h2>
+
+  <h3>inline</h3>
+  <div class="inline-demo">
+    <span>inline1</span>
+    <span>inline2</span>
+  </div>
+
+  <h3>block</h3>
+  <div class="block-demo">
+    <div>block1</div>
+    <div>block2</div>
+  </div>
+
+  <h3>absolute</h3>
+  <div class="position-container">
+    <div class="absolute-box">右下</div>
+  </div>
+
+</section>
+
+<section>
+  <h2>④ Flexbox</h2>
+
+  <div class="flex-container">
+    <div class="flex-item">1</div>
+    <div class="flex-item">2</div>
+    <div class="flex-item">3</div>
+  </div>
+
+  <p>
+    justify-content / align-items / flex-direction を説明できます。
+  </p>
+
+</section>
+
+<section>
+  <h2>⑤ Grid</h2>
+
+  <div class="grid-container">
+    <div class="grid-item">A</div>
+    <div class="grid-item">B</div>
+    <div class="grid-item">C</div>
+  </div>
+
+  <p>
+    Grid は 2次元レイアウト に 強いです。
+  </p>
+
+</section>
+
+<section>
+  <h2>⑥ Responsive Design</h2>
+
+  <p>
+    画面サイズ に よって レイアウト を 変更 します。
+  </p>
+
+  <p>
+    ブラウザ を 小さく してください。
+  </p>
+
+</section>
+
+<footer>
+  <p>3時間 ワークショップ 完了</p>
+</footer>
+
+</body>
+</html>
