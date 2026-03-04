@@ -735,6 +735,171 @@ table / tr / td / th を覚える。
 ✔ submit / button の使い分けを意識
 </div>
 
+  <hr>
+
+<h3>&lt;label&gt;（入力項目の説明ラベル）</h3>
+
+<div class="teacher">
+&lt;label&gt; は、<br>
+<strong>「この入力欄は何を入力するのか」</strong>を明確にするための要素です。<br>
+フォームでは <strong>必須レベルで使うべき要素</strong> です。
+</div>
+
+<hr>
+
+<h4>基本構造（for と id）</h4>
+
+<div class="example">
+<pre>
+&lt;label for="username"&gt;ユーザー名&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ <strong>for</strong> と <strong>id</strong> を同じ名前にする<br>
+✔ label をクリックすると input が選択される
+</div>
+
+<hr>
+
+<h4>なぜ &lt;label&gt; が重要なのか？</h4>
+
+<ul>
+<li>入力ミスを減らす</li>
+<li>UI が分かりやすくなる</li>
+<li>スマホで押しやすい</li>
+<li>アクセシビリティ対応（重要）</li>
+</ul>
+
+<div class="teacher">
+💡 業務システムでは<br>
+<strong>label がないフォームは NG</strong> と言われることもあります。
+</div>
+
+<hr>
+
+<h4>Example 1：テキスト入力（基本）</h4>
+
+<div class="example">
+<pre>
+&lt;label for="email"&gt;メールアドレス&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ 入力内容が一目で分かる
+</div>
+
+<hr>
+
+<h4>Example 2：チェックボックス</h4>
+
+<div class="example">
+<pre>
+&lt;label&gt;
+  &lt;input type="checkbox" name="agree"&gt;
+  利用規約に同意します
+&lt;/label&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ input を label の中に入れてもOK<br>
+✔ チェックしやすくなる
+</div>
+
+<hr>
+
+<h4>Example 3：ラジオボタン</h4>
+
+<div class="example">
+<pre>
+&lt;label&gt;
+  &lt;input type="radio" name="gender" value="male"&gt;
+  男性
+&lt;/label&gt;
+
+&lt;label&gt;
+  &lt;input type="radio" name="gender" value="female"&gt;
+  女性
+&lt;/label&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ 選択肢が分かりやすくなる
+</div>
+
+<hr>
+
+<h4>Example 4：select と label（超重要）</h4>
+
+<div class="example">
+<pre>
+&lt;label for="prefecture"&gt;都道府県&lt;/label&gt;
+&lt;select id="prefecture" name="prefecture"&gt;
+  &lt;option value=""&gt;選択してください&lt;/option&gt;
+  &lt;option value="tokyo"&gt;東京都&lt;/option&gt;
+  &lt;option value="aichi"&gt;愛知県&lt;/option&gt;
+  &lt;option value="osaka"&gt;大阪府&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ select も必ず label を付ける<br>
+✔ 「何を選ぶのか」が明確
+</div>
+
+<hr>
+
+<h4>Example 5：ログインフォーム（実務例）</h4>
+
+<div class="example">
+<pre>
+&lt;form action="login.php" method="post"&gt;
+
+  &lt;label for="login-id"&gt;ログインID&lt;/label&gt;
+  &lt;input type="text" id="login-id" name="login_id"&gt;
+
+  &lt;label for="password"&gt;パスワード&lt;/label&gt;
+  &lt;input type="password" id="password" name="password"&gt;
+
+  &lt;button type="submit"&gt;ログイン&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ 実務でそのまま使える形
+</div>
+
+<hr>
+
+<h4>Usage（いつ使う？）</h4>
+
+<ul>
+<li>すべての input / select / textarea</li>
+<li>業務システムのフォーム</li>
+<li>ログイン・登録・申請画面</li>
+</ul>
+
+<div class="teacher">
+💡 実務ルール：<br>
+<strong>「フォーム要素 = label セット」</strong><br>
+覚えるより、癖にする。
+</div>
+
+<hr>
+
+<div class="summary">
+<strong>Summary：</strong><br>
+&lt;label&gt; はフォームの「説明書」。<br>
+正しく使うと、UI・安全性・品質が一気に上がる。
+</div>
 <hr>
 
 <!-- required -->
