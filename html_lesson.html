@@ -1,302 +1,425 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>HTML 初心者向け完全コース（日本語詳細解説）</title>
-  <style>
-    body {
-      font-family: Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-      line-height: 1.9;
-      margin: 40px;
-      background-color: #f6f6f6;
-    }
-    h1 {
-      background: #222;
-      color: #fff;
-      padding: 20px;
-    }
-    h2 {
-      margin-top: 50px;
-      border-left: 6px solid #222;
-      padding-left: 12px;
-    }
-    section {
-      background: #fff;
-      padding: 25px;
-      margin-bottom: 40px;
-      border-radius: 8px;
-    }
-    .teacher {
-      background: #e6f2ff;
-      padding: 15px;
-      border-left: 5px solid #007acc;
-      margin: 15px 0;
-    }
-    .note {
-      background: #fff3cd;
-      padding: 15px;
-      border-left: 5px solid #f0ad4e;
-      margin: 15px 0;
-    }
-    .example-title {
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    pre {
-      background: #eee;
-      padding: 15px;
-      overflow-x: auto;
-    }
-    footer {
-      text-align: center;
-      color: #666;
-      margin-top: 80px;
-      font-size: 14px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>HTML 初心者向け完全教材（演習・解答付き）</title>
+<style>
+body {
+  font-family: Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f4f4f4;
+  line-height: 1.9;
+  margin: 40px;
+}
+h1 {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+}
+h2 {
+  border-left: 6px solid #333;
+  padding-left: 12px;
+  margin-top: 50px;
+}
+section {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.teacher {
+  background: #e6f2ff;
+  padding: 15px;
+  border-left: 5px solid #007acc;
+  margin-bottom: 15px;
+}
+.example {
+  margin-bottom: 20px;
+}
+.exercise {
+  background: #e8f5e9;
+  padding: 15px;
+  border-left: 5px solid #4caf50;
+  margin-top: 20px;
+}
+.answer {
+  background: #fff3cd;
+  padding: 15px;
+  border-left: 5px solid #f0ad4e;
+  margin-top: 10px;
+}
+pre {
+  background: #eee;
+  padding: 15px;
+  overflow-x: auto;
+}
+footer {
+  text-align: center;
+  color: #666;
+  margin-top: 80px;
+}
+</style>
 </head>
 
 <body>
 
-<h1>HTML 初心者向け完全コース（レッスン1〜10）</h1>
+<h1>HTML 初心者向け完全教材（演習・解答付き）</h1>
 
 <!-- Lesson 1 -->
 <section>
-  <h2>レッスン1：HTMLとは何か</h2>
+<h2>レッスン1：HTMLとは</h2>
+<div class="teacher">
+HTML は Webページの構造（骨組み）を作る言語です。
+</div>
 
-  <div class="teacher">
-    HTML は Webページを作るための言語です。<br>
-    HTML は プログラミング言語ではありません。<br>
-    Webページの 文字・画像・リンクなどの「構造（こうぞう）」を作ります。<br>
-    ブラウザ（Chrome など）は HTML を読み取って画面に表示します。
-  </div>
+<div class="example">
+<pre>&lt;h1&gt;Hello World&lt;/h1&gt;</pre>
+</div>
 
-  <div class="example-title">HTML例</div>
-  <pre>
-&lt;h1&gt;Hello World&lt;/h1&gt;
-  </pre>
+<div class="example">
+<pre>&lt;p&gt;This is HTML&lt;/p&gt;</pre>
+</div>
 
-  <div class="note">
-    ・HTML：内容と構造<br>
-    ・CSS：デザイン（色・レイアウト）<br>
-    ・JavaScript：動き
-  </div>
+<div class="example">
+<pre>
+&lt;h1&gt;Title&lt;/h1&gt;
+&lt;p&gt;Description&lt;/p&gt;
+</pre>
+</div>
+
+<div class="exercise">
+【練習】<br>
+「Welcome」という文字を見出しで表示してください。
+</div>
+
+<div class="answer">
+【解答例】
+<pre>&lt;h1&gt;Welcome&lt;/h1&gt;</pre>
+</div>
 </section>
 
 <!-- Lesson 2 -->
 <section>
-  <h2>レッスン2：HTMLの基本構造</h2>
+<h2>レッスン2：HTML基本構造</h2>
+<div class="teacher">
+HTML には必ず決まった基本構造があります。
+</div>
 
-  <div class="teacher">
-    HTML には 必ず決まった基本の形があります。<br>
-    この形は すべての HTML ファイルで共通です。<br>
-    &lt;head&gt; は 設定、&lt;body&gt; は 表示される内容です。
-  </div>
-
-  <pre>
+<div class="example">
+<pre>
 &lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;My Page&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    Hello HTML
-  &lt;/body&gt;
-&lt;/html&gt;
-  </pre>
+&lt;html&gt;&lt;body&gt;Hi&lt;/body&gt;&lt;/html&gt;
+</pre>
+</div>
 
-  <div class="note">
-    ・&lt;title&gt; は ブラウザのタブに表示される名前<br>
-    ・画面に見えるのは &lt;body&gt; の中だけ
-  </div>
+<div class="example">
+<pre>
+&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;
+</pre>
+</div>
+
+<div class="example">
+<pre>
+&lt;meta charset="UTF-8"&gt;
+</pre>
+</div>
+
+<div class="exercise">
+【練習】<br>
+title に「HTML Practice」と設定してください。
+</div>
+
+<div class="answer">
+【解答例】
+<pre>
+&lt;head&gt;
+&lt;title&gt;HTML Practice&lt;/title&gt;
+&lt;/head&gt;
+</pre>
+</div>
 </section>
 
 <!-- Lesson 3 -->
 <section>
-  <h2>レッスン3：文字と見出し</h2>
+<h2>レッスン3：見出しと文章</h2>
 
-  <div class="teacher">
-    Webページに文字を書くには タグを使います。<br>
-    見出しは &lt;h1&gt;、文章は &lt;p&gt; を使います。<br>
-    見出しは 内容のタイトルとして使います。
-  </div>
+<div class="example">
+<pre>&lt;h1&gt;Main Title&lt;/h1&gt;</pre>
+</div>
 
-  <pre>
-&lt;h1&gt;Welcome&lt;/h1&gt;
-&lt;p&gt;This is my first web page.&lt;/p&gt;
-  </pre>
+<div class="example">
+<pre>
+&lt;h2&gt;Sub Title&lt;/h2&gt;
+&lt;p&gt;Text&lt;/p&gt;
+</pre>
+</div>
 
-  <div class="note">
-    ・&lt;h1&gt;〜&lt;h6&gt; まである<br>
-    ・&lt;h1&gt; は ページで一番大事
-  </div>
+<div class="example">
+<pre>
+&lt;p&gt;Line 1&lt;/p&gt;
+&lt;p&gt;Line 2&lt;/p&gt;
+</pre>
+</div>
+
+<div class="exercise">
+【練習】<br>
+h2 と p を使って自己紹介文を書いてください。
+</div>
+
+<div class="answer">
+【解答例】
+<pre>
+&lt;h2&gt;About Me&lt;/h2&gt;
+&lt;p&gt;I am a beginner.&lt;/p&gt;
+</pre>
+</div>
 </section>
 
 <!-- Lesson 4 -->
 <section>
-  <h2>レッスン4：リンクと画像</h2>
+<h2>レッスン4：リンクと画像</h2>
 
-  <div class="teacher">
-    リンクは 他のページへ移動するためのものです。<br>
-    画像は 写真やイラストを表示するために使います。
-  </div>
+<div class="example">
+<pre>&lt;a href="https://example.com"&gt;Example&lt;/a&gt;</pre>
+</div>
 
-  <pre>
-&lt;a href="https://example.com"&gt;Go to site&lt;/a&gt;<br>
-&lt;img src="image.jpg" alt="sample image"&gt;
-  </pre>
+<div class="example">
+<pre>&lt;img src="photo.jpg" alt="photo"&gt;</pre>
+</div>
 
-  <div class="note">
-    ・href：リンク先のURL<br>
-    ・src：画像ファイル名<br>
-    ・alt：画像の説明（とても重要）
-  </div>
+<div class="example">
+<pre>
+&lt;a href="https://google.com"&gt;
+&lt;img src="logo.png"&gt;
+&lt;/a&gt;
+</pre>
+</div>
+
+<div class="exercise">
+【練習】<br>
+Google へのリンクを作成してください。
+</div>
+
+<div class="answer">
+【解答例】
+<pre>&lt;a href="https://google.com"&gt;Google&lt;/a&gt;</pre>
+</div>
 </section>
 
 <!-- Lesson 5 -->
 <section>
-  <h2>レッスン5：リスト（一覧表示）</h2>
+<h2>レッスン5：リスト</h2>
 
-  <div class="teacher">
-    リストは 複数の項目を整理して表示できます。<br>
-    メニューや機能一覧でよく使います。
-  </div>
-
-  <pre>
+<div class="example">
+<pre>
 &lt;ul&gt;
-  &lt;li&gt;HTML&lt;/li&gt;
-  &lt;li&gt;CSS&lt;/li&gt;
-  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;Apple&lt;/li&gt;
 &lt;/ul&gt;
-  </pre>
+</pre>
+</div>
 
-  <div class="note">
-    ・&lt;ul&gt;：点（・）のリスト<br>
-    ・&lt;li&gt;：リストの1項目
-  </div>
+<div class="example">
+<pre>
+&lt;ol&gt;
+&lt;li&gt;Step 1&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+</div>
+
+<div class="example">
+<pre>
+&lt;ul&gt;
+&lt;li&gt;Fruit
+  &lt;ul&gt;&lt;li&gt;Apple&lt;/li&gt;&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+</div>
+
+<div class="exercise">
+【練習】<br>
+好きな食べ物を3つ ul で作ってください。
+</div>
+
+<div class="answer">
+【解答例】
+<pre>
+&lt;ul&gt;
+&lt;li&gt;Pizza&lt;/li&gt;
+&lt;li&gt;Sushi&lt;/li&gt;
+&lt;li&gt;Cake&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+</div>
 </section>
 
 <!-- Lesson 6 -->
 <section>
-  <h2>レッスン6：テーブル（表）</h2>
+<h2>レッスン6：テーブル</h2>
 
-  <div class="teacher">
-    テーブルは 表（ひょう）を作る時に使います。<br>
-    勤怠管理や一覧画面でよく使われます。
-  </div>
-
-  <pre>
+<div class="example">
+<pre>
 &lt;table border="1"&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Name&lt;/th&gt;
-    &lt;th&gt;Age&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Taro&lt;/td&gt;
-    &lt;td&gt;25&lt;/td&gt;
-  &lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;A&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
-  </pre>
+</pre>
+</div>
 
-  <div class="note">
-    ・tr：行（ぎょう）<br>
-    ・th：見出し<br>
-    ・td：データ
-  </div>
+<div class="example">
+<pre>
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;/tr&gt;
+</pre>
+</div>
+
+<div class="example">
+<pre>
+&lt;tr&gt;&lt;td&gt;09:00&lt;/td&gt;&lt;td&gt;18:00&lt;/td&gt;&lt;/tr&gt;
+</pre>
+</div>
+
+<div class="exercise">
+【練習】<br>
+名前と年齢の表を作ってください。
+</div>
+
+<div class="answer">
+【解答例】
+<pre>
+&lt;table border="1"&gt;
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Taro&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+</div>
 </section>
 
 <!-- Lesson 7 -->
 <section>
-  <h2>レッスン7：フォーム（基本）</h2>
+<h2>レッスン7：フォーム基本</h2>
 
-  <div class="teacher">
-    フォームは ユーザーに入力してもらう画面です。<br>
-    問い合わせ・ログイン・業務システムで使います。
-  </div>
+<div class="example">
+<pre>&lt;input type="text"&gt;</pre>
+</div>
 
-  <pre>
+<div class="example">
+<pre>&lt;button&gt;Send&lt;/button&gt;</pre>
+</div>
+
+<div class="example">
+<pre>
 &lt;form&gt;
-  Name: &lt;input type="text"&gt;&lt;br&gt;
-  Email: &lt;input type="email"&gt;&lt;br&gt;
-  &lt;button&gt;Send&lt;/button&gt;
+&lt;input&gt;
 &lt;/form&gt;
-  </pre>
+</pre>
+</div>
 
-  <div class="note">
-    入力したデータは サーバー（PHPなど）に送ります
-  </div>
+<div class="exercise">
+【練習】<br>
+名前入力フォームを作ってください。
+</div>
+
+<div class="answer">
+<pre>
+&lt;form&gt;
+&lt;input type="text"&gt;
+&lt;/form&gt;
+</pre>
+</div>
 </section>
 
 <!-- Lesson 8 -->
 <section>
-  <h2>レッスン8：フォーム要素（詳細）</h2>
+<h2>レッスン8：フォーム要素（詳細）</h2>
 
-  <div class="teacher">
-    入力内容によって type を使い分けます。<br>
-    正しい type を使うと 入力ミスを防げます。
-  </div>
+<div class="example">
+<pre>
+&lt;input type="email"&gt;
+&lt;input type="password"&gt;
+</pre>
+</div>
 
-  <pre>
-&lt;input type="password"&gt;<br>
-&lt;input type="radio" name="g"&gt; Male
-&lt;input type="radio" name="g"&gt; Female<br>
-&lt;input type="checkbox"&gt; HTML
-  </pre>
+<div class="example">
+<pre>
+&lt;input type="radio"&gt;
+&lt;input type="checkbox"&gt;
+</pre>
+</div>
 
-  <div class="note">
-    ・radio：1つだけ選択<br>
-    ・checkbox：複数選択
-  </div>
+<div class="example">
+<pre>
+&lt;select&gt;&lt;option&gt;Tokyo&lt;/option&gt;&lt;/select&gt;
+&lt;textarea&gt;&lt;/textarea&gt;
+</pre>
+</div>
+
+<div class="exercise">
+【練習】<br>
+email と submit を持つフォームを作ってください。
+</div>
+
+<div class="answer">
+<pre>
+&lt;form&gt;
+&lt;input type="email"&gt;
+&lt;input type="submit"&gt;
+&lt;/form&gt;
+</pre>
+</div>
 </section>
 
 <!-- Lesson 9 -->
 <section>
-  <h2>レッスン9：HTMLレイアウト</h2>
+<h2>レッスン9：レイアウト</h2>
 
-  <div class="teacher">
-    レイアウトは ページの配置（はいち）です。<br>
-    HTML5 では 意味が分かるタグを使います。
-  </div>
+<div class="example"><pre>&lt;header&gt;Header&lt;/header&gt;</pre></div>
+<div class="example"><pre>&lt;main&gt;Main&lt;/main&gt;</pre></div>
+<div class="example"><pre>&lt;footer&gt;Footer&lt;/footer&gt;</pre></div>
 
-  <pre>
+<div class="exercise">
+【練習】<br>
+header・main・footer を使って構造を作ってください。
+</div>
+
+<div class="answer">
+<pre>
 &lt;header&gt;Header&lt;/header&gt;
-&lt;main&gt;Main Content&lt;/main&gt;
+&lt;main&gt;Content&lt;/main&gt;
 &lt;footer&gt;Footer&lt;/footer&gt;
-  </pre>
-
-  <div class="note">
-    見た目の調整は CSS で行います
-  </div>
+</pre>
+</div>
 </section>
 
 <!-- Lesson 10 -->
 <section>
-  <h2>レッスン10：総合練習（自己紹介ページ）</h2>
+<h2>レッスン10：総合練習</h2>
 
-  <div class="teacher">
-    今まで学んだタグをすべて使って、<br>
-    簡単な 自己紹介ページを作りましょう。
-  </div>
-
-  <pre>
-&lt;h1&gt;My Profile&lt;/h1&gt;
-&lt;p&gt;Name: Taro&lt;/p&gt;
-
-&lt;h2&gt;Hobby&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Music&lt;/li&gt;
-  &lt;li&gt;Travel&lt;/li&gt;
-&lt;/ul&gt;
-
+<div class="example"><pre>&lt;h1&gt;My Profile&lt;/h1&gt;</pre></div>
+<div class="example"><pre>&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;/ul&gt;</pre></div>
+<div class="example">
+<pre>
 &lt;form&gt;
-  &lt;textarea&gt;&lt;/textarea&gt;&lt;br&gt;
-  &lt;button&gt;Send&lt;/button&gt;
+&lt;textarea&gt;&lt;/textarea&gt;
 &lt;/form&gt;
-  </pre>
+</pre>
+</div>
+
+<div class="exercise">
+【練習】<br>
+自己紹介ページを作ってください。
+</div>
+
+<div class="answer">
+<pre>
+&lt;h1&gt;My Profile&lt;/h1&gt;
+&lt;p&gt;I am learning HTML.&lt;/p&gt;
+&lt;form&gt;
+&lt;textarea&gt;&lt;/textarea&gt;
+&lt;/form&gt;
+</pre>
+</div>
 </section>
 
 <footer>
-  HTML Beginner Course – Japanese Detailed Version
+HTML Beginner Course – Exercise & Answer Version
 </footer>
 
 </body>
