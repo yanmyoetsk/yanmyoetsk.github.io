@@ -109,6 +109,67 @@ HTMLはWebページの「内容」と「構造」を作る言語。
 <section>
 <h2>Lesson 2：HTMLの基本構造</h2>
 
+  <hr>
+
+<h3>HTMLコメント（<!-- -->）</h3>
+
+<div class="teacher">
+HTMLコメントは、<br>
+<strong>ブラウザに表示されないメモ</strong>です。<br>
+コードの説明や一時的な無効化に使います。
+</div>
+
+<h4>コメントの書き方</h4>
+
+<div class="example">
+<pre>
+&lt;!-- これはコメントです --&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ ブラウザには表示されない<br>
+✔ ソースコード上でのみ見える
+</div>
+
+<h4>Examples（実務でよく使う例）</h4>
+
+<div class="example">
+<pre>
+&lt;!-- ヘッダー開始 --&gt;
+&lt;header&gt;
+  &lt;h1&gt;My Site&lt;/h1&gt;
+&lt;/header&gt;
+&lt;!-- ヘッダー終了 --&gt;
+</pre>
+</div>
+
+<div class="example">
+<pre>
+&lt;!-- TODO: 後で修正する --&gt;
+&lt;p&gt;仮の文章&lt;/p&gt;
+</pre>
+</div>
+
+<div class="example">
+<pre>
+&lt;!--
+&lt;p&gt;このコードは一時的に無効&lt;/p&gt;
+--&gt;
+</pre>
+</div>
+
+<div class="teacher">
+💡 実務ポイント：<br>
+・チーム開発で<strong>非常に重要</strong><br>
+・将来の自分や他人のために書く
+</div>
+
+<div class="summary">
+<strong>Summary：</strong><br>
+HTMLコメントは「表示されない説明文」。<br>
+保守性・可読性を上げるために必須。
+</div>
 <div class="teacher">
 HTMLファイルは<strong>決まった構造</strong>を持っています。
 </div>
@@ -280,6 +341,58 @@ href・src・alt は超重要。
 <section>
 <h2>Lesson 6：テーブル</h2>
 
+  <hr>
+
+<h3>テーブルで使うタグの説明</h3>
+
+<div class="teacher">
+テーブルは複数のタグを<strong>セット</strong>で使います。<br>
+それぞれの役割を正しく理解しましょう。
+</div>
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <tr>
+    <th>タグ</th>
+    <th>役割（用途）</th>
+    <th>説明</th>
+    <th>注意点</th>
+  </tr>
+  <tr>
+    <td>&lt;table&gt;</td>
+    <td>表全体</td>
+    <td>テーブル全体を囲む</td>
+    <td>レイアウト目的で使わない</td>
+  </tr>
+  <tr>
+    <td>&lt;tr&gt;</td>
+    <td>行（row）</td>
+    <td>1行分のデータ</td>
+    <td>必ず table 内に書く</td>
+  </tr>
+  <tr>
+    <td>&lt;th&gt;</td>
+    <td>見出しセル</td>
+    <td>項目名・タイトル</td>
+    <td>通常は最上段または左列</td>
+  </tr>
+  <tr>
+    <td>&lt;td&gt;</td>
+    <td>データセル</td>
+    <td>実際の値を表示</td>
+    <td>文字・数字どちらもOK</td>
+  </tr>
+</table>
+
+<div class="teacher">
+✔ <strong>th は見出し、td はデータ</strong><br>
+✔ 構造を意識して書くと読みやすい
+</div>
+
+<div class="summary">
+<strong>Summary：</strong><br>
+テーブルは「情報を整理して伝える」ためのタグ。<br>
+構造を意識して正しく使う。
+</div>
 <div class="teacher">
 表形式のデータに使います。
 </div>
