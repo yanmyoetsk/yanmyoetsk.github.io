@@ -346,35 +346,155 @@ table / tr / td / th を覚える。
 
 <!-- ================= Lesson 8 ================= -->
 <section>
-<h2>Lesson 8：フォーム要素（詳細）</h2>
+<h2>Lesson 8：フォーム要素（詳細・実務編）</h2>
 
 <div class="teacher">
-用途に応じて type を使い分けます。
+フォームは<strong>業務システムの入口</strong>です。  
+ログイン、ユーザー登録、問い合わせ、申請画面など  
+ほぼすべてのWebシステムで使われます。
 </div>
 
-<h3>Examples（5例）</h3>
+<h3>form タグの重要属性</h3>
+<ul>
+<li><strong>action</strong>：送信先URL（PHP / API）</li>
+<li><strong>method</strong>：GET または POST</li>
+<li><strong>name</strong>：サーバー側で受け取るキー名</li>
+</ul>
 
-<div class="example"><pre>&lt;input type="password"&gt;</pre></div>
-<div class="example"><pre>&lt;input type="checkbox"&gt;</pre></div>
-<div class="example"><pre>&lt;input type="radio"&gt;</pre></div>
-<div class="example"><pre>&lt;select&gt;&lt;option&gt;A&lt;/option&gt;&lt;/select&gt;</pre></div>
-<div class="example"><pre>&lt;input type="date"&gt;</pre></div>
+<div class="teacher">
+✔ 実務では <strong>POST が基本</strong><br>
+✔ パスワード・個人情報は GET を使わない
+</div>
+
+<hr>
+
+<h2>① ユーザー登録フォーム（Registration Form）</h2>
+
+<div class="teacher">
+<strong>用途：</strong><br>
+新規ユーザーをシステムに登録する画面です。<br>
+会員登録・社員登録・管理画面作成で必須です。
+</div>
+
+<h3>Example：登録フォーム</h3>
+
+<div class="example">
+<pre>
+&lt;form action="register.php" method="post"&gt;
+
+  ユーザー名：&lt;br&gt;
+  &lt;input type="text" name="username" required&gt;&lt;br&gt;&lt;br&gt;
+
+  メールアドレス：&lt;br&gt;
+  &lt;input type="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+
+  パスワード：&lt;br&gt;
+  &lt;input type="password" name="password" required&gt;&lt;br&gt;&lt;br&gt;
+
+  性別：&lt;br&gt;
+  &lt;input type="radio" name="gender" value="male"&gt; 男性
+  &lt;input type="radio" name="gender" value="female"&gt; 女性
+  &lt;br&gt;&lt;br&gt;
+
+  &lt;button type="submit"&gt;登録&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+</div>
+
+<h3>詳細解説（講師向け説明）</h3>
+<ul>
+<li><strong>action="register.php"</strong><br>
+　→ 入力内容を PHP に送る</li>
+<li><strong>method="post"</strong><br>
+　→ URLに表示されない（安全）</li>
+<li><strong>name 属性</strong><br>
+　→ PHP側で $_POST['username'] として受信</li>
+<li><strong>required</strong><br>
+　→ 未入力を防ぐ（HTML側の簡易バリデーション）</li>
+</ul>
 
 <div class="exercise">
-チェックボックスとラジオを作りましょう。
+【Exercise】<br>
+・年齢（number）<br>
+・誕生日（date）<br>
+を追加してみましょう。
 </div>
 
 <div class="answer">
 <pre>
-&lt;input type="checkbox"&gt;HTML
-&lt;input type="radio" name="g"&gt;Male
-&lt;input type="radio" name="g"&gt;Female
+年齢：&lt;br&gt;
+&lt;input type="number" name="age"&gt;&lt;br&gt;&lt;br&gt;
+
+誕生日：&lt;br&gt;
+&lt;input type="date" name="birthday"&gt;
 </pre>
 </div>
 
 <div class="summary">
-type を覚えるとフォームは自由自在。
+登録フォームは「action・method・name」が最重要。
 </div>
+
+<hr>
+
+<h2>② ログインフォーム（Login Form）</h2>
+
+<div class="teacher">
+<strong>用途：</strong><br>
+システムにログインするための画面です。  
+勤怠管理、管理画面、社内システムで必須です。
+</div>
+
+<h3>Example：ログインフォーム</h3>
+
+<div class="example">
+<pre>
+&lt;form action="login.php" method="post"&gt;
+
+  メールアドレス：&lt;br&gt;
+  &lt;input type="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+
+  パスワード：&lt;br&gt;
+  &lt;input type="password" name="password" required&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;button type="submit"&gt;ログイン&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+</div>
+
+<h3>詳細解説（業務視点）</h3>
+<ul>
+<li><strong>ログインは最低限の項目</strong><br>
+　→ ID（メール）＋ パスワード</li>
+<li><strong>POST必須</strong><br>
+　→ GETは絶対NG</li>
+<li><strong>実務では</strong><br>
+　→ PHPでパスワードハッシュを比較</li>
+</ul>
+
+<div class="teacher">
+⚠ 実務注意点：<br>
+HTMLだけではセキュリティは不十分。<br>
+必ずサーバー側でチェックする。
+</div>
+
+<div class="exercise">
+【Exercise】<br>
+「ログイン状態を保存する」チェックボックスを追加しましょう。
+</div>
+
+<div class="answer">
+<pre>
+&lt;input type="checkbox" name="remember"&gt;
+ログイン状態を保存する
+</pre>
+</div>
+
+<div class="summary">
+ログインフォームは「安全第一」。
+</div>
+
 </section>
 
 <!-- ================= Lesson 9 ================= -->
