@@ -430,7 +430,189 @@ table / tr / td / th を覚える。
 <div class="teacher">
 フォームは入力画面です。
 </div>
+<hr>
 
+<h3>フォーム要素の使用場面（Usage）</h3>
+
+<div class="teacher">
+ここでは、<br>
+<strong>各フォーム要素が「どんな業務画面で使われるか」</strong>を<br>
+実務ベースで整理します。
+</div>
+
+<!-- form usage -->
+<h4>&lt;form&gt; の Usage</h4>
+<ul>
+<li>ログイン画面</li>
+<li>ユーザー登録画面</li>
+<li>お問い合わせフォーム</li>
+<li>勤怠申請（出勤・休暇）</li>
+</ul>
+
+<div class="teacher">
+✔ form は「1画面＝1目的」で作るのが基本
+</div>
+
+<hr>
+
+<!-- input text -->
+<h4>&lt;input type="text"&gt; の Usage</h4>
+<ul>
+<li>氏名</li>
+<li>ユーザー名</li>
+<li>タイトル・件名</li>
+</ul>
+
+<div class="teacher">
+✔ 短い文字入力に使用
+</div>
+
+<hr>
+
+<!-- email -->
+<h4>&lt;input type="email"&gt; の Usage</h4>
+<ul>
+<li>ログインID</li>
+<li>会員登録メール</li>
+<li>問い合わせ返信先</li>
+</ul>
+
+<div class="teacher">
+✔ メール形式の簡易チェックが可能
+</div>
+
+<hr>
+
+<!-- password -->
+<h4>&lt;input type="password"&gt; の Usage</h4>
+<ul>
+<li>ログイン画面</li>
+<li>会員登録（パスワード設定）</li>
+<li>管理画面認証</li>
+</ul>
+
+<div class="teacher">
+⚠ value は絶対に表示・保存しない
+</div>
+
+<hr>
+
+<!-- number -->
+<h4>&lt;input type="number"&gt; の Usage</h4>
+<ul>
+<li>年齢</li>
+<li>数量</li>
+<li>勤怠時間（時間数）</li>
+</ul>
+
+<div class="teacher">
+✔ 数値専用入力として使う
+</div>
+
+<hr>
+
+<!-- date -->
+<h4>&lt;input type="date"&gt; の Usage</h4>
+<ul>
+<li>誕生日</li>
+<li>申請日</li>
+<li>出勤日・休暇日</li>
+</ul>
+
+<div class="teacher">
+✔ 日付入力のミスを防げる
+</div>
+
+<hr>
+
+<!-- radio -->
+<h4>ラジオボタン（radio）の Usage</h4>
+<ul>
+<li>性別</li>
+<li>Yes / No の選択</li>
+<li>支払方法（1つ選択）</li>
+</ul>
+
+<div class="teacher">
+✔ 選択肢が少なく、1つだけ選ばせたい場合
+</div>
+
+<hr>
+
+<!-- checkbox -->
+<h4>チェックボックス（checkbox）の Usage</h4>
+<ul>
+<li>利用規約同意</li>
+<li>スキル選択</li>
+<li>オプション指定</li>
+</ul>
+
+<div class="teacher">
+✔ 複数選択が必要な場合
+</div>
+
+<hr>
+
+<!-- textarea -->
+<h4>&lt;textarea&gt; の Usage</h4>
+<ul>
+<li>お問い合わせ内容</li>
+<li>備考欄</li>
+<li>コメント・理由入力</li>
+</ul>
+
+<div class="teacher">
+✔ 長文入力は textarea 一択
+</div>
+
+<hr>
+
+<!-- select -->
+<h4>&lt;select&gt; の Usage</h4>
+<ul>
+<li>国・都道府県選択</li>
+<li>部署選択</li>
+<li>ステータス選択</li>
+</ul>
+
+<div class="teacher">
+✔ 選択肢が多い場合に有効
+</div>
+
+<hr>
+
+<!-- button -->
+<h4>&lt;button&gt; の Usage</h4>
+<ul>
+<li>送信（submit）</li>
+<li>確認画面へ</li>
+<li>キャンセル</li>
+</ul>
+
+<div class="teacher">
+✔ submit / button の使い分けを意識
+</div>
+
+<hr>
+
+<!-- required -->
+<h4>required 属性の Usage</h4>
+<ul>
+<li>ログインID</li>
+<li>必須項目</li>
+<li>入力漏れ防止</li>
+</ul>
+
+<div class="teacher">
+⚠ HTMLの required は補助機能<br>
+✔ 本番では必ずサーバー側チェック
+</div>
+
+<div class="summary">
+<strong>Summary：</strong><br>
+フォーム要素は「見た目」ではなく「目的」で選ぶ。<br>
+業務画面を想像して使い分けることが重要。
+</div>
 <h3>Examples（5例）</h3>
 
 <div class="example"><pre>&lt;form&gt;&lt;/form&gt;</pre></div>
