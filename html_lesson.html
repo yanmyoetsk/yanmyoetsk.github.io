@@ -565,6 +565,7 @@ table / tr / td / th を覚える。
 ✔ 長文入力は textarea 一択
 </div>
 
+  
 <hr>
 
 <!-- select -->
@@ -580,6 +581,147 @@ table / tr / td / th を覚える。
 </div>
 
 <hr>
+
+  <hr>
+
+<h3>&lt;select&gt; / &lt;option&gt;（プルダウン選択）</h3>
+
+<div class="teacher">
+&lt;select&gt; は、<br>
+<strong>決められた選択肢の中から1つ（または複数）を選ばせる</strong>ための要素です。<br>
+業務システムでは非常によく使われます。
+</div>
+
+<h4>基本構造</h4>
+
+<div class="example">
+<pre>
+&lt;select name="example"&gt;
+  &lt;option value="a"&gt;A&lt;/option&gt;
+  &lt;option value="b"&gt;B&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ <strong>value</strong> がサーバーに送信される<br>
+✔ 表示文字と value は違ってもよい
+</div>
+
+<hr>
+
+<h4>Example 1：都道府県選択（よくある業務例）</h4>
+
+<div class="example">
+<pre>
+&lt;select name="prefecture" required&gt;
+  &lt;option value=""&gt;選択してください&lt;/option&gt;
+  &lt;option value="tokyo"&gt;東京都&lt;/option&gt;
+  &lt;option value="aichi"&gt;愛知県&lt;/option&gt;
+  &lt;option value="osaka"&gt;大阪府&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ 最初の option は「選択してください」にする<br>
+✔ value="" にすると未選択チェックがしやすい
+</div>
+
+<hr>
+
+<h4>Example 2：部署選択（社内システム）</h4>
+
+<div class="example">
+<pre>
+&lt;select name="department"&gt;
+  &lt;option value="dev"&gt;開発部&lt;/option&gt;
+  &lt;option value="sales"&gt;営業部&lt;/option&gt;
+  &lt;option value="hr"&gt;人事部&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ 表示は日本語、value は英語コードが一般的
+</div>
+
+<hr>
+
+<h4>Example 3：ステータス選択（管理画面）</h4>
+
+<div class="example">
+<pre>
+&lt;select name="status"&gt;
+  &lt;option value="0"&gt;未対応&lt;/option&gt;
+  &lt;option value="1"&gt;対応中&lt;/option&gt;
+  &lt;option value="2"&gt;完了&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ 数値の value はDBと相性が良い
+</div>
+
+<hr>
+
+<h4>Example 4：複数選択（multiple）</h4>
+
+<div class="example">
+<pre>
+&lt;select name="skills[]" multiple&gt;
+  &lt;option value="html"&gt;HTML&lt;/option&gt;
+  &lt;option value="css"&gt;CSS&lt;/option&gt;
+  &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ multiple を付けると複数選択可能<br>
+✔ name は 配列（[]）にする
+</div>
+
+<hr>
+
+<h4>Example 5：初期選択（selected）</h4>
+
+<div class="example">
+<pre>
+&lt;select name="country"&gt;
+  &lt;option value="jp" selected&gt;Japan&lt;/option&gt;
+  &lt;option value="us"&gt;USA&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ selected で初期値を設定できる
+</div>
+
+<hr>
+
+<h4>Usage（いつ使う？）</h4>
+
+<ul>
+<li>選択肢が多い場合</li>
+<li>入力ミスを防ぎたい場合</li>
+<li>DBの値を固定したい場合</li>
+<li>ステータス・区分・分類入力</li>
+</ul>
+
+<div class="teacher">
+💡 実務ポイント：<br>
+・自由入力より select の方が安全<br>
+・業務システムでは text より select を優先することが多い
+</div>
+
+<div class="summary">
+<strong>Summary：</strong><br>
+&lt;select&gt; は「入力させないで、選ばせる」ための要素。<br>
+ミス防止・データ統一に非常に有効。
+</div>
 
 <!-- button -->
 <h4>&lt;button&gt; の Usage</h4>
