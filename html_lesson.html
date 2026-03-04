@@ -2,137 +2,166 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>HTML 初心者向け完全教材（演習・解答付き）</title>
+<title>HTML 初心者向け研修教材（講師用完成版）</title>
+
 <style>
 body {
   font-family: Arial, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  background: #f4f4f4;
+  background-color: #f2f2f2;
   line-height: 1.9;
   margin: 40px;
 }
 h1 {
-  background: #222;
+  background: #1f2937;
   color: #fff;
-  padding: 20px;
+  padding: 24px;
 }
 h2 {
-  border-left: 6px solid #333;
+  margin-top: 60px;
+  border-left: 6px solid #1f2937;
   padding-left: 12px;
-  margin-top: 50px;
 }
 section {
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  margin-bottom: 40px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 10px;
+  margin-bottom: 50px;
 }
 .teacher {
   background: #e6f2ff;
-  padding: 15px;
-  border-left: 5px solid #007acc;
-  margin-bottom: 15px;
-}
-.example {
+  padding: 16px;
+  border-left: 5px solid #2563eb;
   margin-bottom: 20px;
 }
+.example {
+  margin-bottom: 18px;
+}
+.note {
+  background: #fff7ed;
+  padding: 14px;
+  border-left: 5px solid #f59e0b;
+  margin-top: 15px;
+}
 .exercise {
-  background: #e8f5e9;
-  padding: 15px;
-  border-left: 5px solid #4caf50;
-  margin-top: 20px;
+  background: #ecfdf5;
+  padding: 16px;
+  border-left: 5px solid #10b981;
+  margin-top: 25px;
 }
 .answer {
-  background: #fff3cd;
-  padding: 15px;
-  border-left: 5px solid #f0ad4e;
+  background: #fef3c7;
+  padding: 16px;
+  border-left: 5px solid #f59e0b;
   margin-top: 10px;
 }
 pre {
-  background: #eee;
-  padding: 15px;
+  background: #eeeeee;
+  padding: 16px;
   overflow-x: auto;
 }
 footer {
   text-align: center;
-  color: #666;
-  margin-top: 80px;
+  color: #555;
+  margin-top: 100px;
+  font-size: 14px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>HTML 初心者向け完全教材（演習・解答付き）</h1>
+<h1>HTML 初心者向け研修教材（講師用・完成版）</h1>
 
 <!-- Lesson 1 -->
 <section>
-<h2>レッスン1：HTMLとは</h2>
+<h2>レッスン1：HTMLとは何か</h2>
+
 <div class="teacher">
-HTML は Webページの構造（骨組み）を作る言語です。
+HTML は Webページを作るための言語です。<br>
+正確には「見た目」ではなく、ページの<strong>構造</strong>を定義します。<br>
+プログラミング言語ではなく、<strong>マークアップ言語</strong>です。
 </div>
 
 <div class="example">
+<p>例①：見出しを表示する</p>
 <pre>&lt;h1&gt;Hello World&lt;/h1&gt;</pre>
 </div>
 
 <div class="example">
-<pre>&lt;p&gt;This is HTML&lt;/p&gt;</pre>
+<p>例②：文章を表示する</p>
+<pre>&lt;p&gt;This is HTML.&lt;/p&gt;</pre>
 </div>
 
 <div class="example">
+<p>例③：見出し＋文章</p>
 <pre>
 &lt;h1&gt;Title&lt;/h1&gt;
 &lt;p&gt;Description&lt;/p&gt;
 </pre>
 </div>
 
+<div class="note">
+HTML：構造 / CSS：デザイン / JavaScript：動き  
+（役割分担が非常に重要です）
+</div>
+
 <div class="exercise">
-【練習】<br>
-「Welcome」という文字を見出しで表示してください。
+【演習】  
+「Welcome to HTML」という文字を見出しとして表示してください。
 </div>
 
 <div class="answer">
 【解答例】
-<pre>&lt;h1&gt;Welcome&lt;/h1&gt;</pre>
+<pre>&lt;h1&gt;Welcome to HTML&lt;/h1&gt;</pre>
 </div>
 </section>
 
 <!-- Lesson 2 -->
 <section>
-<h2>レッスン2：HTML基本構造</h2>
+<h2>レッスン2：HTMLの基本構造</h2>
+
 <div class="teacher">
-HTML には必ず決まった基本構造があります。
+HTML には必ず決まった基本構造があります。  
+この構造を守らないと、正しく表示されない原因になります。
 </div>
 
 <div class="example">
+<p>例①：最小構造</p>
 <pre>
 &lt;!DOCTYPE html&gt;
-&lt;html&gt;&lt;body&gt;Hi&lt;/body&gt;&lt;/html&gt;
+&lt;html&gt;
+&lt;body&gt;Hello&lt;/body&gt;
+&lt;/html&gt;
 </pre>
 </div>
 
 <div class="example">
+<p>例②：head と title</p>
 <pre>
-&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;
+&lt;head&gt;
+&lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
 </pre>
 </div>
 
 <div class="example">
-<pre>
-&lt;meta charset="UTF-8"&gt;
-</pre>
+<p>例③：文字コード指定</p>
+<pre>&lt;meta charset="UTF-8"&gt;</pre>
+</div>
+
+<div class="note">
+日本語ページでは UTF-8 の指定は必須です。
 </div>
 
 <div class="exercise">
-【練習】<br>
-title に「HTML Practice」と設定してください。
+【演習】  
+title を「HTML 基礎研修」に設定してください。
 </div>
 
 <div class="answer">
-【解答例】
 <pre>
 &lt;head&gt;
-&lt;title&gt;HTML Practice&lt;/title&gt;
+&lt;title&gt;HTML 基礎研修&lt;/title&gt;
 &lt;/head&gt;
 </pre>
 </div>
@@ -142,6 +171,11 @@ title に「HTML Practice」と設定してください。
 <section>
 <h2>レッスン3：見出しと文章</h2>
 
+<div class="teacher">
+見出しタグは文書構造を表します。  
+サイズ目的で使ってはいけません。
+</div>
+
 <div class="example">
 <pre>&lt;h1&gt;Main Title&lt;/h1&gt;</pre>
 </div>
@@ -149,27 +183,30 @@ title に「HTML Practice」と設定してください。
 <div class="example">
 <pre>
 &lt;h2&gt;Sub Title&lt;/h2&gt;
-&lt;p&gt;Text&lt;/p&gt;
+&lt;p&gt;Explanation text&lt;/p&gt;
 </pre>
 </div>
 
 <div class="example">
 <pre>
-&lt;p&gt;Line 1&lt;/p&gt;
-&lt;p&gt;Line 2&lt;/p&gt;
+&lt;p&gt;Paragraph 1&lt;/p&gt;
+&lt;p&gt;Paragraph 2&lt;/p&gt;
 </pre>
 </div>
 
+<div class="note">
+h1 は原則 1ページに1つです。
+</div>
+
 <div class="exercise">
-【練習】<br>
-h2 と p を使って自己紹介文を書いてください。
+【演習】  
+自己紹介として、h2 と p を使って文章を書いてください。
 </div>
 
 <div class="answer">
-【解答例】
 <pre>
 &lt;h2&gt;About Me&lt;/h2&gt;
-&lt;p&gt;I am a beginner.&lt;/p&gt;
+&lt;p&gt;I am learning HTML.&lt;/p&gt;
 </pre>
 </div>
 </section>
@@ -178,29 +215,33 @@ h2 と p を使って自己紹介文を書いてください。
 <section>
 <h2>レッスン4：リンクと画像</h2>
 
+<div class="teacher">
+Webの最大の特徴は「リンク」です。  
+画像には必ず alt 属性を付けます。
+</div>
+
 <div class="example">
 <pre>&lt;a href="https://example.com"&gt;Example&lt;/a&gt;</pre>
 </div>
 
 <div class="example">
-<pre>&lt;img src="photo.jpg" alt="photo"&gt;</pre>
+<pre>&lt;img src="photo.jpg" alt="sample photo"&gt;</pre>
 </div>
 
 <div class="example">
 <pre>
 &lt;a href="https://google.com"&gt;
-&lt;img src="logo.png"&gt;
+&lt;img src="logo.png" alt="Google"&gt;
 &lt;/a&gt;
 </pre>
 </div>
 
 <div class="exercise">
-【練習】<br>
+【演習】  
 Google へのリンクを作成してください。
 </div>
 
 <div class="answer">
-【解答例】
 <pre>&lt;a href="https://google.com"&gt;Google&lt;/a&gt;</pre>
 </div>
 </section>
@@ -208,6 +249,10 @@ Google へのリンクを作成してください。
 <!-- Lesson 5 -->
 <section>
 <h2>レッスン5：リスト</h2>
+
+<div class="teacher">
+リストはメニューや項目表示で頻繁に使います。
+</div>
 
 <div class="example">
 <pre>
@@ -236,12 +281,11 @@ Google へのリンクを作成してください。
 </div>
 
 <div class="exercise">
-【練習】<br>
-好きな食べ物を3つ ul で作ってください。
+【演習】  
+好きな食べ物を3つ、ul で作成してください。
 </div>
 
 <div class="answer">
-【解答例】
 <pre>
 &lt;ul&gt;
 &lt;li&gt;Pizza&lt;/li&gt;
@@ -254,7 +298,11 @@ Google へのリンクを作成してください。
 
 <!-- Lesson 6 -->
 <section>
-<h2>レッスン6：テーブル</h2>
+<h2>レッスン6：テーブル（表）</h2>
+
+<div class="teacher">
+業務システムでは最も重要なタグの一つです。
+</div>
 
 <div class="example">
 <pre>
@@ -266,27 +314,26 @@ Google へのリンクを作成してください。
 
 <div class="example">
 <pre>
-&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;
 </pre>
 </div>
 
 <div class="example">
 <pre>
-&lt;tr&gt;&lt;td&gt;09:00&lt;/td&gt;&lt;td&gt;18:00&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Taro&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;
 </pre>
 </div>
 
 <div class="exercise">
-【練習】<br>
-名前と年齢の表を作ってください。
+【演習】  
+名前と出勤時間の表を作成してください。
 </div>
 
 <div class="answer">
-【解答例】
 <pre>
 &lt;table border="1"&gt;
-&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Age&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;Taro&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Time&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Taro&lt;/td&gt;&lt;td&gt;09:00&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 </pre>
 </div>
@@ -294,27 +341,25 @@ Google へのリンクを作成してください。
 
 <!-- Lesson 7 -->
 <section>
-<h2>レッスン7：フォーム基本</h2>
+<h2>レッスン7：フォーム（基本）</h2>
 
-<div class="example">
-<pre>&lt;input type="text"&gt;</pre>
+<div class="teacher">
+フォームはユーザー入力を受け取るために使います。
 </div>
 
-<div class="example">
-<pre>&lt;button&gt;Send&lt;/button&gt;</pre>
-</div>
-
+<div class="example"><pre>&lt;input type="text"&gt;</pre></div>
+<div class="example"><pre>&lt;button&gt;Send&lt;/button&gt;</pre></div>
 <div class="example">
 <pre>
 &lt;form&gt;
-&lt;input&gt;
+&lt;input type="text"&gt;
 &lt;/form&gt;
 </pre>
 </div>
 
 <div class="exercise">
-【練習】<br>
-名前入力フォームを作ってください。
+【演習】  
+名前入力フォームを作成してください。
 </div>
 
 <div class="answer">
@@ -329,6 +374,10 @@ Google へのリンクを作成してください。
 <!-- Lesson 8 -->
 <section>
 <h2>レッスン8：フォーム要素（詳細）</h2>
+
+<div class="teacher">
+入力内容に応じて type を正しく使うことが重要です。
+</div>
 
 <div class="example">
 <pre>
@@ -346,14 +395,14 @@ Google へのリンクを作成してください。
 
 <div class="example">
 <pre>
-&lt;select&gt;&lt;option&gt;Tokyo&lt;/option&gt;&lt;/select&gt;
+&lt;select&gt;&lt;option&gt;Nagoya&lt;/option&gt;&lt;/select&gt;
 &lt;textarea&gt;&lt;/textarea&gt;
 </pre>
 </div>
 
 <div class="exercise">
-【練習】<br>
-email と submit を持つフォームを作ってください。
+【演習】  
+email と submit ボタンを持つフォームを作成してください。
 </div>
 
 <div class="answer">
@@ -368,15 +417,19 @@ email と submit を持つフォームを作ってください。
 
 <!-- Lesson 9 -->
 <section>
-<h2>レッスン9：レイアウト</h2>
+<h2>レッスン9：HTMLレイアウト</h2>
+
+<div class="teacher">
+HTML5 では意味を持つレイアウトタグを使います。
+</div>
 
 <div class="example"><pre>&lt;header&gt;Header&lt;/header&gt;</pre></div>
 <div class="example"><pre>&lt;main&gt;Main&lt;/main&gt;</pre></div>
 <div class="example"><pre>&lt;footer&gt;Footer&lt;/footer&gt;</pre></div>
 
 <div class="exercise">
-【練習】<br>
-header・main・footer を使って構造を作ってください。
+【演習】  
+header・main・footer を使ってページ構造を作成してください。
 </div>
 
 <div class="answer">
@@ -390,27 +443,25 @@ header・main・footer を使って構造を作ってください。
 
 <!-- Lesson 10 -->
 <section>
-<h2>レッスン10：総合練習</h2>
+<h2>レッスン10：総合演習</h2>
 
-<div class="example"><pre>&lt;h1&gt;My Profile&lt;/h1&gt;</pre></div>
-<div class="example"><pre>&lt;ul&gt;&lt;li&gt;HTML&lt;/li&gt;&lt;/ul&gt;</pre></div>
-<div class="example">
-<pre>
-&lt;form&gt;
-&lt;textarea&gt;&lt;/textarea&gt;
-&lt;/form&gt;
-</pre>
+<div class="teacher">
+これまで学んだ内容をすべて使います。
 </div>
 
 <div class="exercise">
-【練習】<br>
-自己紹介ページを作ってください。
+【演習】  
+自己紹介ページを作成してください。
 </div>
 
 <div class="answer">
 <pre>
 &lt;h1&gt;My Profile&lt;/h1&gt;
 &lt;p&gt;I am learning HTML.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;/ul&gt;
 &lt;form&gt;
 &lt;textarea&gt;&lt;/textarea&gt;
 &lt;/form&gt;
@@ -419,7 +470,7 @@ header・main・footer を使って構造を作ってください。
 </section>
 
 <footer>
-HTML Beginner Course – Exercise & Answer Version
+HTML Beginner Training Material – Lecturer Polished Edition
 </footer>
 
 </body>
