@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>CSS 3時間 勉強会（解説付き）</title>
+<title>CSS 3時間 勉強会（解説付き＋コード例）</title>
 <style>
 /* ===== Global Styles ===== */
 body {
@@ -11,41 +11,29 @@ body {
   line-height: 1.6;
   background: #f4f6f8;
 }
-
 header {
   background: #2c3e50;
   color: white;
   padding: 40px;
   text-align: center;
 }
-
 section {
   background: white;
   margin: 30px;
   padding: 30px;
   border-radius: 10px;
 }
-
 h2 {
   border-left: 6px solid #3498db;
   padding-left: 10px;
 }
-
 h3 {
   color: #2c3e50;
   margin-top: 20px;
 }
-
-p {
-  margin-bottom: 10px;
-}
-
-code {
-  background: #eee;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-family: monospace;
-}
+p { margin-bottom: 10px; }
+code { background: #eee; padding: 2px 5px; border-radius: 3px; font-family: monospace; }
+pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x:auto; }
 
 /* ===== Example Boxes ===== */
 .example {
@@ -87,19 +75,14 @@ code {
   .grid-container { grid-template-columns:1fr; }
 }
 
-footer {
-  text-align:center;
-  padding:20px;
-  background:#2c3e50;
-  color:white;
-}
+footer { text-align:center; padding:20px; background:#2c3e50; color:white; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>CSS 3時間 勉強会（解説付き）</h1>
-  <p>Lecture + Example + Notes</p>
+  <h1>CSS 3時間 勉強会（解説付き＋コード例）</h1>
+  <p>Lecture + Example + Notes + CSS Code</p>
 </header>
 
 <!-- ===== Section 1: CSSとは ===== -->
@@ -111,7 +94,9 @@ footer {
 <div class="example">
   <p style="color:red;">この文字は赤です。</p>
 </div>
-<p>講義で伝える: 「pタグの文字色を赤にしました。」</p>
+<pre><code>p {
+  color: red;
+}</code></pre>
 </section>
 
 <!-- ===== Section 2: セレクタ ===== -->
@@ -124,110 +109,194 @@ footer {
 <div class="example element-selector">
   <p>このpタグは青になります。</p>
 </div>
+<pre><code>p {
+  color: blue;
+}</code></pre>
 
 <h3>2. クラスセレクタ</h3>
 <p class="blue-text">この文字は青色（class）です。</p>
+<pre><code>.blue-text {
+  color: blue;
+}</code></pre>
 
 <h3>3. IDセレクタ</h3>
 <p id="special">この文字は赤色（ID）で太字です。</p>
+<pre><code>#special {
+  color: red;
+  font-weight: bold;
+}</code></pre>
 
 <h3>4. 子孫セレクタ</h3>
 <div class="parent">
   <p>div内のpタグは紫になります。</p>
 </div>
+<pre><code>.parent p {
+  color: purple;
+}</code></pre>
 
 <h3>5. 疑似クラス</h3>
 <p class="hover-demo">マウスをのせるとオレンジになります。</p>
+<pre><code>.hover-demo:hover {
+  color: orange;
+}</code></pre>
 
 <h3>6. 詳細度（Specificity）</h3>
 <p>優先順位: inline style > ID > class > element</p>
-
-<p>講義で伝える: 「CSSではどのルールが優先されるかを理解することが重要です。」</p>
 </section>
 
 <!-- ===== Section 3: Box Model ===== -->
 <section>
 <h2>③ Box Model（はこの仕組み）</h2>
-<p><strong>説明:</strong> HTML要素はすべて箱です。箱にはcontent、padding、border、marginがあります。</p>
+<p><strong>説明:</strong> HTML要素はすべて箱です。content、padding、border、marginがあります。</p>
 <p><strong>講義ポイント:</strong> レイアウトを作るときに必須です。</p>
 
 <h3>1. 基本例</h3>
 <div class="box-demo">margin + padding + border の例</div>
+<pre><code>.box-demo {
+  margin: 20px;
+  padding: 20px;
+  border: 4px solid black;
+  background: #ecf0f1;
+}</code></pre>
 
 <h3>2. content-box（デフォルト）</h3>
 <div class="content-box">width + padding + border = 実際のサイズ</div>
+<pre><code>.content-box {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid blue;
+}</code></pre>
 
 <h3>3. border-box</h3>
 <div class="border-box">box-sizing:border-box を使うとサイズ計算が簡単です。</div>
+<pre><code>.border-box {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid red;
+}</code></pre>
 </section>
 
 <!-- ===== Section 4: Display & Position ===== -->
 <section>
 <h2>④ Display & Position</h2>
+
 <h3>1. inline</h3>
 <div class="inline-demo">
   <span>inline1</span>
   <span>inline2</span>
 </div>
+<pre><code>span {
+  display: inline;
+}</code></pre>
 
 <h3>2. block</h3>
 <div class="block-demo">
   <div>block1</div>
   <div>block2</div>
 </div>
+<pre><code>div {
+  display: block;
+}</code></pre>
 
 <h3>3. position</h3>
-<p>absolute、relative、fixed を使います。</p>
 <div class="position-container">
   <div class="absolute-box">右下に固定</div>
 </div>
-
-<p>講義で伝える: 「位置指定はデザインで重要。absoluteは親の中で固定されます。」</p>
+<pre><code>.absolute-box {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: red;
+  color: white;
+  padding: 10px;
+}</code></pre>
 </section>
 
 <!-- ===== Section 5: Flexbox ===== -->
 <section>
 <h2>⑤ Flexbox</h2>
-<p><strong>説明:</strong> Flexboxは要素を効率よく並べる方法です。</p>
-<p>講義ポイント: 横並び、縦中央、スペース調整など</p>
+<p>Flexboxは要素を効率よく並べる方法です。</p>
 <div class="flex-container">
   <div class="flex-item">1</div>
   <div class="flex-item">2</div>
   <div class="flex-item">3</div>
 </div>
+<pre><code>.flex-container {
+  display: flex;
+  gap: 20px;
+}
+
+.flex-item {
+  flex: 1;
+  padding: 20px;
+  background: #3498db;
+  color: white;
+  text-align: center;
+}</code></pre>
+
 <p>ブラウザを縮小すると縦並びになります（レスポンシブ対応）。</p>
 </section>
 
 <!-- ===== Section 6: Grid ===== -->
 <section>
 <h2>⑥ Grid</h2>
-<p><strong>説明:</strong> Gridは2次元レイアウトが簡単に作れる方法です。</p>
 <div class="grid-container">
   <div class="grid-item">A</div>
   <div class="grid-item">B</div>
   <div class="grid-item">C</div>
 </div>
-<p>講義で伝える: 「列と行を自由に作れるのでFlexboxより強力な場合があります。」</p>
+<pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-item {
+  background: #9b59b6;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}</code></pre>
+<p>2次元レイアウトに便利です。</p>
 </section>
 
-<!-- ===== Section 7: Responsive Design ===== -->
+<!-- ===== Section 7: Responsive ===== -->
 <section>
 <h2>⑦ レスポンシブデザイン</h2>
-<p><strong>説明:</strong> 画面サイズに応じてレイアウトを変えることです。</p>
-<p>ブラウザを小さくすると、FlexboxやGridが縦並びになります。</p>
-<p>講義で伝える: 「スマホでも見やすいサイトを作ることが重要です。」</p>
+<p>画面サイズに応じてレイアウトを変えます。</p>
+<pre><code>@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+<p>スマホでも見やすくなります。</p>
 </section>
 
 <!-- ===== Section 8: 小さいデモプロジェクト ===== -->
 <section>
 <h2>⑧ 小さいデモプロジェクト</h2>
-<p>カード3つをFlexboxで横並びにしてみます。スマホでは縦に並びます。</p>
+<p>カード3つをFlexboxで横並び、スマホでは縦並びにします。</p>
 <div class="flex-container">
   <div class="flex-item">Card 1</div>
   <div class="flex-item">Card 2</div>
   <div class="flex-item">Card 3</div>
 </div>
-<p>講義で伝える: 「これが実務でもよく使うレイアウトです。」</p>
+<pre><code>.flex-container {
+  display: flex;
+  gap: 20px;
+}
+
+.flex-item {
+  flex: 1;
+  padding: 20px;
+  background: #3498db;
+  color: white;
+  text-align: center;
+}</code></pre>
 </section>
 
 <footer>
