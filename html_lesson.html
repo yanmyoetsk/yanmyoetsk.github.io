@@ -532,35 +532,182 @@ HTML5は意味のあるタグを使います。
 
 <!-- ================= Lesson 10 ================= -->
 <section>
-<h2>Lesson 10：総合練習</h2>
+<h2>Lesson 10：総合Webページ設計（まとめ）</h2>
 
 <div class="teacher">
-今までの内容を全部使います。
+このレッスンでは、<br>
+<strong>Lesson 1〜9 で学んだすべての要素を使って</strong><br>
+「1つの完成したWebページ」を設計します。
 </div>
 
-<h3>Examples（5例）</h3>
+<div class="teacher">
+📌 実務では、HTMLは<br>
+「タグを知っている」ではなく<br>
+<strong>「どう組み合わせてページを作るか」</strong>が重要です。
+</div>
 
-<div class="example"><pre>&lt;h1&gt;Profile&lt;/h1&gt;</pre></div>
-<div class="example"><pre>&lt;ul&gt;&lt;li&gt;Hobby&lt;/li&gt;&lt;/ul&gt;</pre></div>
-<div class="example"><pre>&lt;img src="me.jpg"&gt;</pre></div>
-<div class="example"><pre>&lt;form&gt;&lt;input&gt;&lt;/form&gt;</pre></div>
-<div class="example"><pre>&lt;footer&gt;©2026&lt;/footer&gt;</pre></div>
+<hr>
+
+<h3>■ 今回作るページの構成（設計）</h3>
+
+<ul>
+<li>ヘッダー（サイト名）</li>
+<li>ナビゲーション（リンク）</li>
+<li>メインコンテンツ（説明・画像・リスト）</li>
+<li>お問い合わせフォーム</li>
+<li>フッター（コピーライト）</li>
+</ul>
+
+<hr>
+
+<h3>Example 1：ページ全体のレイアウト（HTML5）</h3>
+<div class="example">
+<pre>
+&lt;header&gt;
+  &lt;h1&gt;My Company&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt; |
+  &lt;a href="#"&gt;Service&lt;/a&gt; |
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  © 2026 My Company
+&lt;/footer&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ header / nav / main / footer は<br>
+ページ構造を明確にするための<strong>意味のあるタグ</strong>です。
+</div>
+
+<hr>
+
+<h3>Example 2：見出しと文章（Lesson 3）</h3>
+<div class="example">
+<pre>
+&lt;h2&gt;会社概要&lt;/h2&gt;
+&lt;p&gt;
+私たちはWebシステム開発を行っています。
+&lt;/p&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ 見出しで<strong>情報の区切り</strong>を作る  
+✔ pタグは文章の基本
+</div>
+
+<hr>
+
+<h3>Example 3：画像とリスト（Lesson 4・5）</h3>
+<div class="example">
+<pre>
+&lt;img src="office.jpg" alt="会社の写真"&gt;
+
+&lt;h3&gt;主なサービス&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Webシステム開発&lt;/li&gt;
+  &lt;li&gt;業務システム&lt;/li&gt;
+  &lt;li&gt;保守・運用&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ alt は必須（アクセシビリティ・SEO）  
+✔ サービス一覧はリストが最適
+</div>
+
+<hr>
+
+<h3>Example 4：表（Lesson 6）</h3>
+<div class="example">
+<pre>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;項目&lt;/th&gt;
+    &lt;th&gt;内容&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;設立&lt;/td&gt;
+    &lt;td&gt;2020年&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ 表は「比較・一覧情報」に使う  
+✔ レイアウト目的では使わない（重要）
+</div>
+
+<hr>
+
+<h3>Example 5：お問い合わせフォーム（Lesson 7・8）</h3>
+<div class="example">
+<pre>
+&lt;form action="contact.php" method="post"&gt;
+
+  お名前：&lt;br&gt;
+  &lt;input type="text" name="name" required&gt;&lt;br&gt;&lt;br&gt;
+
+  メール：&lt;br&gt;
+  &lt;input type="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+
+  お問い合わせ内容：&lt;br&gt;
+  &lt;textarea name="message"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;button type="submit"&gt;送信&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+</div>
+
+<div class="teacher">
+✔ form / input / textarea / button  
+✔ action・method・name を必ず意識
+</div>
+
+<hr>
 
 <div class="exercise">
-自己紹介ページを作りましょう。
+<strong>Exercise（総合課題）</strong><br>
+以下を含むWebページを作ってみましょう。
+<ul>
+<li>header / footer</li>
+<li>見出しと文章</li>
+<li>画像</li>
+<li>リスト</li>
+<li>フォーム</li>
+</ul>
 </div>
 
 <div class="answer">
 <pre>
-&lt;h1&gt;My Profile&lt;/h1&gt;
-&lt;p&gt;Name: Taro&lt;/p&gt;
-&lt;ul&gt;&lt;li&gt;Music&lt;/li&gt;&lt;/ul&gt;
+&lt;header&gt;&lt;h1&gt;My Site&lt;/h1&gt;&lt;/header&gt;
+&lt;main&gt;
+  &lt;h2&gt;About&lt;/h2&gt;
+  &lt;p&gt;Welcome&lt;/p&gt;
+&lt;/main&gt;
+&lt;footer&gt;©2026&lt;/footer&gt;
 </pre>
 </div>
 
 <div class="summary">
-HTMLの基本はこれで完成。
+<strong>Summary：</strong><br>
+Lesson 10 は「HTMLのまとめ」です。<br>
+✔ タグ単体ではなく<strong>組み合わせ</strong>が重要<br>
+✔ HTMLは「構造設計」<br>
+✔ 次は CSS・PHP に進める
 </div>
+
 </section>
 
 </body>
